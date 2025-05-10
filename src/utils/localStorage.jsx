@@ -1,0 +1,240 @@
+const employees = [
+  {
+    id: "emp1",
+    firstname: "Aarav",
+    email: "employee1@example.com",
+    password: "123",
+    taskCounts: {
+      active: 1,
+      new: 1,
+      completed: 1,
+      failed: 1,
+    },
+    tasks: [
+      {
+        action: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+        title: "Design Landing Page",
+        description: "Create a responsive landing page for the new product.",
+        date: "2025-05-10",
+        category: "Design",
+      },
+      {
+        action: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        title: "Fix Login Bug",
+        description: "Resolve login issue on mobile devices.",
+        date: "2025-05-08",
+        category: "Development",
+      },
+      {
+        action: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+        title: "Update Docs",
+        description: "Documentation update was missed in last release.",
+        date: "2025-05-07",
+        category: "Documentation",
+      },
+    ],
+  },
+  {
+    id: "emp2",
+    firstname: "Priya",
+    email: "employee2@example.com",
+    password: "123",
+    taskCounts: {
+      active: 1,
+      new: 1,
+      completed: 1,
+      failed: 0,
+    },
+    tasks: [
+      {
+        action: true,
+        newTask: false,
+        completed: false,
+        failed: false,
+        title: "Review PR #42",
+        description: "Code review for the API integration pull request.",
+        date: "2025-05-09",
+        category: "Code Review",
+      },
+      {
+        action: false,
+        newTask: true,
+        completed: false,
+        failed: false,
+        title: "Write Test Cases",
+        description: "Write unit tests for the payment service.",
+        date: "2025-05-11",
+        category: "Testing",
+      },
+      {
+        action: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        title: "Team Meeting",
+        description: "Weekly sync-up with product and design team.",
+        date: "2025-05-06",
+        category: "Meetings",
+      },
+    ],
+  },
+  {
+    id: "emp3",
+    firstname: "Karthik",
+    email: "employee3@example.com",
+    password: "123",
+    taskCounts: {
+      active: 0,
+      new: 1,
+      completed: 1,
+      failed: 1,
+    },
+    tasks: [
+      {
+        action: false,
+        newTask: true,
+        completed: false,
+        failed: false,
+        title: "Create Dashboard Mockups",
+        description: "Design low-fidelity mockups for analytics dashboard.",
+        date: "2025-05-13",
+        category: "Design",
+      },
+      {
+        action: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        title: "Update Dependencies",
+        description: "Update project dependencies and fix breaking changes.",
+        date: "2025-05-08",
+        category: "Maintenance",
+      },
+      {
+        action: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+        title: "Push Feature Branch",
+        description: "Missed the feature branch deadline for sprint.",
+        date: "2025-05-05",
+        category: "Development",
+      },
+    ],
+  },
+  {
+    id: "emp4",
+    firstname: "Sneha",
+    email: "employee4@example.com",
+    password: "123",
+    taskCounts: {
+      active: 1,
+      new: 1,
+      completed: 1,
+      failed: 1,
+    },
+    tasks: [
+      {
+        action: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+        title: "Write Blog Post",
+        description: "Draft a blog post about new app features.",
+        date: "2025-05-12",
+        category: "Content",
+      },
+      {
+        action: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+        title: "Optimize Images",
+        description: "Image optimization task was missed in deployment.",
+        date: "2025-05-04",
+        category: "Performance",
+      },
+      {
+        action: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        title: "Client Presentation",
+        description: "Presented the app prototype to the client.",
+        date: "2025-05-06",
+        category: "Meetings",
+      },
+    ],
+  },
+  {
+    id: "emp5",
+    firstname: "Rohan",
+    email: "employee5@example.com",
+    password: "123",
+    taskCounts: {
+      active: 1,
+      new: 1,
+      completed: 1,
+      failed: 0,
+    },
+    tasks: [
+      {
+        action: true,
+        newTask: false,
+        completed: false,
+        failed: false,
+        title: "Refactor Login Code",
+        description: "Improve and clean up login authentication logic.",
+        date: "2025-05-09",
+        category: "Development",
+      },
+      {
+        action: false,
+        newTask: true,
+        completed: false,
+        failed: false,
+        title: "Design 404 Page",
+        description: "Create a custom design for 404 error page.",
+        date: "2025-05-10",
+        category: "Design",
+      },
+      {
+        action: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        title: "Fix Footer",
+        description: "Corrected alignment issue in site footer.",
+        date: "2025-05-07",
+        category: "UI Fix",
+      },
+    ],
+  },
+];
+
+const admin = {
+  id: "admin1",
+  email: "admin@example.com",
+  password: "123",
+};
+
+export const setLocalStorage = () => {
+  localStorage.setItem("employees", JSON.stringify(employees));
+  localStorage.setItem("admin", JSON.stringify(admin));
+};
+
+export const getLocalStorage = () => {
+  const employees = JSON.parse(localStorage.getItem("employees"));
+  const admin = JSON.parse(localStorage.getItem("admin"));
+
+  return { employees, admin };
+};
