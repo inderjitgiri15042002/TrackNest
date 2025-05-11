@@ -14,11 +14,9 @@ const App = () => {
     if (loggedInUser) {
       setUser(loggedInUser.role);
       if (loggedInUser.role === "employee") {
-        setLoggedInUserData(loggedInUser); // Assuming you store more info in loggedInUser.
+        setLoggedInUserData(loggedInUser);
       }
     }
-
-    // Clean-up when the app loads
 
     return () => {
       window.removeEventListener("load", () => {
@@ -54,9 +52,9 @@ const App = () => {
       {!user ? (
         <Login handleLogin={handleLogin} />
       ) : user === "admin" ? (
-        <AdminDashboard />
+        <AdminDashboard changeUser={setUser} />
       ) : (
-        <EmployeeDashboard data={loggedInUserData} />
+        <EmployeeDashboard changeUser={setUser} data={loggedInUserData} />
       )}
     </>
   );

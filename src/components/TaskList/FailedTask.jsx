@@ -14,7 +14,7 @@ const FailedTask = ({ data }) => {
           className="bg-red-600  text-sm rounded"
           style={{ padding: "0.25rem 0.75rem", fontWeight: "500" }}
         >
-          Priority
+          {data.category}
         </h3>
         <h4 style={{ fontSize: "0.875rem", color: "white" }}>{data.date}</h4>
       </div>
